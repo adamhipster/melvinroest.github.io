@@ -5,7 +5,7 @@
       font-family: "Merriweather", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
       font-size: 18px;
       font-weight: 300;
-      line-height: 30px;
+      line-height: 26px;
       margin: 0 auto;
       width: 60%;
     }
@@ -20,12 +20,32 @@
       font-size: 18px;
       font-weight: 400;
     }
+
+    .active {
+      display: block !important;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @media (max-width: 979px) {
+      body {
+        width: 90%;
+        line-height: 24px;
+      }
+      h1 {
+        margin-top: 20px;
+      }
+    }
+
+
   </style>
 </head>
 <body>
-  <h1>About Melvin</h1>
+  <h1>About Melvin Roest</h1>
   <p>
-    <em>Melvin gamified his university experience.</em> ~ <a target="_blank" href="https://www.linkedin.com/in/timothytjen/">Timothy Tjen Alooi</a>
+    <em>Melvin gamified his university experience.</em> ~ <a target="_blank" href="https://www.linkedin.com/in/timothytjen/">Timothy Tjen Alooi (Full Stack Developer)</a>
   </p>
   <p>
     <em>Melvin is crazy in a positive sense.</em> ~ <a target="_blank" href="https://www.cs.vu.nl/~eliens/">Prof. Dr. Anton Eliëns</a> (warning confusing website ahead!)
@@ -34,35 +54,57 @@
     <em>Melvin inspires people to accelerate their education.</em> ~  <a href="https://www.advalvas.vu.nl/tips-trucs/doe-de-dubbele-master" target="_blank">The University Newspaper (VU Amsterdam)</a>
   </p>
   <h1>Portfolio</h1>
-	<p>Melvin has experience in (Game, Web &amp; App) Development, Education and Psychology.
+	<p>I have experience in (Game, Web &amp; App) <a href="#dev" onclick="switchActive(this, event)">Development</a>, <a href="#edu" onclick="switchActive(this, event)">Education</a> and <a href="#psy" onclick="switchActive(this, event)">Psychology</a>.
   </p>
+  <div id="dev" class="hidden">
   <h2>Development</h2>
-  <ul>
-    <li>Check out his home grown computer graphics engine! (<a target="_blank" href="https://www.youtube.com/watch?v=PH6-dLvZEiA">YouTube</a>, 2 min.)</li>
-    <li>Check out his thesis on hypermedia in 2018, the sibling of hypertext (<a target="_blank" href="ximpel">Website</a>)</li>
-    <li>A lot of Melvin's code is on <a target="_blank" href="https://www.github.com/melvinroest">Github</a></li>
-  </ul>
-  <h2>Education</h2>
-  <ul>
-    <li>Viewable on <a target="_blank" href="https://www.linkedin.com/in/melvinroest">LinkedIn</a></li>
-  </ul>
+    <ul>
+      <li>I wrote my thesis on hypermedia in 2018 (<a target="_blank" href="ximpel">Link</a>)</li>
+      <li>Check out my home grown computer graphics engine! (<a target="_blank" href="https://www.youtube.com/watch?v=PH6-dLvZEiA">YouTube</a>, 2 min.)</li>
+      <li>Understand the science behind sentiment analysis on Twitter (<a target="_blank" href="articles/sentiment.pdf">PDF</a>)</li>
+      <li><a target="_blank" href="https://www.github.com/melvinroest">Github</a> is where my code eats, sleeps and contemplates 🙏</li>
+    </ul>
+  </div>
+  <div id="edu" class="hidden">
+    <h2>Education</h2>
+    <ul>
+      <li>I wrote my thesis on hypermedia in 2018 (<a target="_blank" href="ximpel">Link</a>)</li>
+      <li>There is too much to say! See my <a target="_blank" href="https://www.linkedin.com/in/melvinroest">LinkedIn</a></li>
+    </ul>
+  </div>
 
-  <h2>Articles (psychology &amp; development)</h2>
-  <ul>
-    <li>Understand the science behind intuition (<a target="_blank" href="articles/intuition.pdf">PDF</a>)</li>
-    <li>Understand the science behind frustrated gamers (<a target="_blank" href="articles/frustration.pdf">PDF</a>)</li>
-    <li>Understand the science behind sentiment analysis on Twitter (<a target="_blank" href="articles/sentiment.pdf">PDF</a>)</li>
-  </ul>
+  <div id="psy" class="hidden">
+    <h2>Psychology articles written by me</h2>
+    <ul>
+      <li>I wrote my thesis on hypermedia in 2018 (<a target="_blank" href="ximpel">Link</a>)</li>
+      <li>Understand the science behind intuition (<a target="_blank" href="articles/intuition.pdf">PDF</a>)</li>
+      <li>Understand the science behind frustrated gamers (<a target="_blank" href="articles/frustration.pdf">PDF</a>)</li>
+    </ul>
+  </div>
   </p>
-  <h1>Collaboration oportunities (Hiring)</h1>
-  <p>You need someone skilled in app development while understanding the business side. You need someone who emphasizes training and knowledge retention within your organization. You need someone who is able to learn crazy fast and get things done and teaches other people to do the same.</p>
-  <p>If this hit a mark, then you might need me.</p>
-  <h1>Contact</h1>
-  <p>To prevent spammers from finding out my email address I will give it to you in a simple riddle.
-  My first name is Melvin. My last name is Roest. In my email address these are written in lowercase. My email provider is gmail.com. The full template would be: <br />
-  [first name][last name][at][email provider]
+  <h1>Let's have a chat</h1>
+  <p>To prevent automated bots from chasing me across the interwebs I made a riddle about my email address. My email provider is gmail.com</p>
+  <p>
+  Here is the riddle: [first name][last name][at][email provider]
+  </p>
 
-
+  <script>
+    function switchActive(target, event){
+      var elements = document.getElementsByClassName("hidden");
+      var length = elements.length;
+      for (var i = 0; i < length; i++) {
+        var element = elements[i];
+        var linkId = target.href.split("#")[1];
+        if (element.classList && linkId === element.id) {
+          element.classList.add("active");
+        }
+        else if(element.classList.contains("active")){
+          element.classList.remove("active");
+        }
+      }
+      event.preventDefault();
+    }
+  </script>
 
 </body>
 </html>
