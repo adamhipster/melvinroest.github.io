@@ -1,48 +1,13 @@
 <html>
 <head>
-  <style>
-    body {
-      font-family: "Merriweather", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
-      font-size: 18px;
-      font-weight: 300;
-      line-height: 26px;
-      margin: 0 auto;
-      width: 60%;
-    }
+  <link rel="stylesheet" type="text/css" href="custom.css">
 
-    h1 {
-      font-size: 18px;
-      font-weight: 600;
-      text-transform: uppercase;
-      margin-top: 40px;
-    }
-    h2 {
-      font-size: 18px;
-      font-weight: 400;
-    }
-
-    .active {
-      display: block !important;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    @media (max-width: 979px) {
-      body {
-        width: 90%;
-        line-height: 24px;
-      }
-      h1 {
-        margin-top: 20px;
-      }
-    }
-
-
-  </style>
+  <noscript>
+    <link rel="stylesheet" type="text/css" href="noscript.css">
+  </noscript>
 </head>
 <body>
+  
   <h1>About Melvin Roest</h1>
   <p>
     <em>Melvin gamified his university experience.</em> ~ <a target="_blank" href="https://www.linkedin.com/in/timothytjen/">Timothy Tjen Alooi (Full Stack Developer)</a>
@@ -53,8 +18,9 @@
   <p>
     <em>Melvin inspires people to accelerate their education.</em> ~  <a href="https://www.advalvas.vu.nl/tips-trucs/doe-de-dubbele-master" target="_blank">The University Newspaper (VU Amsterdam)</a>
   </p>
-  <h1>Portfolio</h1>
-	<p>I have experience in (Game, Web &amp; App) <a href="#dev" onclick="switchActive(this, event)">Development</a>, <a href="#edu" onclick="switchActive(this, event)">Education</a> and <a href="#psy" onclick="switchActive(this, event)">Psychology</a>.
+  
+  <h1>Portfolio Highlights</h1>
+	<p>I have experience in (Game, Web &amp; App) <a class="toggle_no_script" href="#dev" onclick="switchActive(this, event)">Development <span class="guillemet">»</span></a>, <a class="toggle_no_script" href="#edu" onclick="switchActive(this, event)">Education <span class="guillemet">»</span></a> and <a class="toggle_no_script" href="#psy" onclick="switchActive(this, event)">Psychology <span class="guillemet">»</span></a>.
   </p>
   <div id="dev" class="hidden">
   <h2>Development</h2>
@@ -81,7 +47,7 @@
       <li>Understand the science behind frustrated gamers (<a target="_blank" href="articles/frustration.pdf">PDF</a>)</li>
     </ul>
   </div>
-  </p>
+
   <h1>Let's have a chat</h1>
   <p>To prevent automated bots from chasing me across the interwebs I made a riddle about my email address. My email provider is gmail.com</p>
   <p>
@@ -105,6 +71,5 @@
       event.preventDefault();
     }
   </script>
-
 </body>
 </html>
